@@ -18,7 +18,7 @@ Just a simple website to read webp manga, since I can't find a reader for it and
   * Your txt file is going to be saved in `assets/data/`
 5. Open index.html on your browser;
 6. Upload a txt file with paths to your images:
-  * It needs to be something like: C:/Users/John/Manga/01/1.webp.
+  * It needs to be filled with paths like this: C:/Users/John/Manga/01/1.webp.
 
 ## Utilities
 So far you can filter for which chapter you want to see and go to top of the page.
