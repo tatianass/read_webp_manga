@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<script type="text/javascript" src="assets/js/angular.min.js"></script>
+
+<!-- Angular -->
+<script type="text/javascript" src="angular/app/app.js"></script>
+<script type="text/javascript" src="angular/controller/mainController.js"></script>
+<script type="text/javascript" src="angular/directive/readFile.js"></script>
+<body ng-app="myapp">
+<!-- Style -->
+<script src="assets/js/jquery-3.4.1.slim.min.js" type="text/javascript"></script>
+<script src="assets/js/popper.min.js" src="text/javascript"></script>
+<link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
+<script src="assets/js/bootstrap.min.js" src="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+
+<div ng-controller="MainCtrl">
+	<a id="topBtn" ng-click="goTop()"></a>
+
+	<div>
+		<h1>Choose a txt file with paths to the images that you want to see.</h1>
+		<span>
+			<i class="fas fa-paperclip" aria-hidden="true"></i>
+			<label for="imageUpload" class="btn btn-primary btn-block btn-outlined">Upload File</label>
+			<input type="file" id="imageUpload" on-read-file="showContent($fileContent)">
+		</span>
+	</div>
+
+	<div class="info" ng-if="paths.length > 0">
+		<h4>Number of chapters: {{paths[paths.length-2].split(split_chapter)[1].split('/')[0]}}</h4>
+		<p>Pick a chapter (e.g. 02)</p>
+		<input type="text" name="chapter" ng-model="choosen_chapter">
+		<a class="btn btn-small btn-info" ng-click="goChapter(choosen_chapter)">Go</a>
+	</div>
+	<div ng-repeat="x in paths">
+		<div class="chapter-background" ng-if="x.split(split_chapter)[1].split('/')[1].indexOf('01') == 0"
+		id="{{x.split(split_chapter)[1].split('/')[0]}}">
+			<h3>Chapter {{x.split(split_chapter)[1].split('/')[0]}}</h3>
+		</div>
+			<img src={{x}} alt="Girl in a jacket">
+		
+	</div>
+</div>
+</body>
+</html>
