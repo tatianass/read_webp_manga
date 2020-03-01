@@ -20,8 +20,8 @@ def save_images(
 		# Pick from 1 to max of chapters + 1
 		Args:
 			start_num (int): Start download from chapter x.
-			chapters_num (int):  End download until chapter x (e.g. C:/Users/x/Downloads.
-			download_path (str):  Local path to download.
+			chapters_num (int):  End download until chapter x.
+			download_path (str):  Local path to download (e.g. C:/Users/x/Downloads).
 			match_str (str):  Matching image format (e.g. webp, png, jpg).
 			prefix_url (str):  Prefix of url to download from (e.g. https:images.google.com/...).
 			sufix_url (str): Sufix of url to download from (e.g. .html).

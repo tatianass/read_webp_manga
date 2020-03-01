@@ -1,7 +1,8 @@
 """Creates a list of all files that are in folders and subfolders"""
 import os
+import sys
 
-main_dir = '<pick_main_path>'
+main_dir = str(sys.argsv[1])
 
 map_dir = []
 for dir in os.listdir(main_dir):
