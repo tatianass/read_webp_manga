@@ -28,15 +28,15 @@
 	</div>
 
 	<div class="info" ng-if="paths.length > 0">
-		<h4>Number of chapters: {{paths[paths.length-2].split(split_chapter)[1].split('/')[0]}}</h4>
+		<h4>Number of chapters: {{paths[paths.length-2].split('/')[paths[paths.length-2].split('/').length-2]}}</h4>
 		<p>Pick a chapter (e.g. 02)</p>
 		<input type="text" name="chapter" ng-model="choosen_chapter">
 		<a class="btn btn-small btn-info" ng-click="goChapter(choosen_chapter)">Go</a>
 	</div>
 	<div ng-repeat="x in paths">
-		<div class="chapter-background" ng-if="x.split(split_chapter)[1].split('/')[1].indexOf('01') == 0"
-		id="{{x.split(split_chapter)[1].split('/')[0]}}">
-			<h3>Chapter {{x.split(split_chapter)[1].split('/')[0]}}</h3>
+		<div class="chapter-background" ng-if="x.split('/')[x.split('/').length - 1].indexOf('01') == 0"
+		id="{{x.split('/')[x.split('/').length - 2]}}">
+			<h3>Chapter {{x.split('/')[x.split('/').length - 2]}}</h3>
 		</div>
 			<img src={{x}} alt="Girl in a jacket">
 		

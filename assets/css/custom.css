@@ -30,6 +30,12 @@ h4 {
 	font-family: monospace;
 }
 
+.folder {
+	color: white;
+	margin: 0 auto;
+	text-align: center;
+}
+
 #topBtn {
 	display: inline-block;
 	background-color: #FF9800;

@@ -1,8 +1,7 @@
 myapp.controller('MainCtrl', function ($scope) {
     $scope.showContent = function($fileContent){
         $scope.paths = $fileContent.split(',');
-        $scope.split_chapter = '/mg/'
-        
+
         $scope.goChapter = function (choosen_chapter) {
         	document.getElementById(choosen_chapter).scrollIntoView();
         }
